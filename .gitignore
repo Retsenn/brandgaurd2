@@ -1,7 +1,6 @@
-.venv/
+
 chroma_data/
 temp_uploads/
 brandguard.db
 __pycache__/
 *.pyc
-data/.env
