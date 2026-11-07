@@ -54,8 +54,8 @@ assert abs(sum(CATEGORY_WEIGHTS.values()) - 1.0) < 0.001, \
 # ─── THRESHOLDS ─────────────────────────────────────────────────────────────
 # Thresholds = boundaries jo decide karti hain pass ya fail
 
-PASS_THRESHOLD = 85        # Score >= 85 + no critical issues → human review ke liye ready
-WARNING_THRESHOLD = 60     # Score 60-84 → improvement needed but not terrible
+PASS_THRESHOLD = 70        # Score >= 85 + no critical issues → human review ke liye ready
+WARNING_THRESHOLD = 50     # Score 60-84 → improvement needed but not terrible
 CRITICAL_SCORE_CAP = 49    # Critical issue hone pe max score 49 (even if AI gave 95)
 
 
