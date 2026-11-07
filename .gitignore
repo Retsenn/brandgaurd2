@@ -4,3 +4,9 @@ temp_uploads/
 brandguard.db
 __pycache__/
 *.pyc
+.venv/
+
+# Secrets — never commit API keys
+.env
+data/.env
+*.env
