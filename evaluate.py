@@ -240,7 +240,7 @@ def evaluate_post(text_content, campaign_objective, image_path=None,
         
         # Gemini API call karo
         response = client.models.generate_content(
-            model="gemini-2.0-flash",   # Fast aur capable model
+            model="gemini-3.8-flash",   # Fast aur capable model
             contents=contents,
             config=types.GenerateContentConfig(
                 temperature=0.2,         # Low temperature = more consistent/factual output

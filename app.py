@@ -238,6 +238,13 @@ st.markdown("""
         transform: translateY(-1px) !important;
     }
 
+    /* Fix Sidebar Button & Main Labels visibility */
+    [data-testid="stSidebar"] .stButton > button * {
+        color: #1e293b !important;
+    }
+    label, .stTabs [data-baseweb="tab"] * {
+        color: #1e293b !important;
+    }
     /* ── Form elements ── */
     .stTextInput > div > input,
     .stTextArea > div > textarea,
@@ -326,6 +333,34 @@ st.markdown("""
     #MainMenu, footer { visibility: hidden; }
     header { visibility: hidden; }
 
+    /* ── FORCE LIGHT MODE TEXT & INPUT VISIBILITY ── */
+    .main label, 
+    .main label p, 
+    .main [data-testid="stWidgetLabel"] p,
+    .main [data-testid="stMarkdownContainer"] p,
+    .stTabs [data-baseweb="tab"] p {
+        color: #1e293b !important;
+        font-weight: 600 !important;
+    }
+
+    /* Input boxes aur Dropdown ko hamesha White rakho */
+    .stTextInput input, 
+    .stTextArea textarea, 
+    [data-baseweb="input"], 
+    [data-baseweb="base-input"],
+    [data-baseweb="select"] > div {
+        background-color: #ffffff !important;
+        color: #1e293b !important;
+        -webkit-text-fill-color: #1e293b !important;
+    }
+
+    /* Sidebar ke 'Switch Role' button ka text Dark rakho */
+    [data-testid="stSidebar"] .stButton > button,
+    [data-testid="stSidebar"] .stButton > button p,
+    [data-testid="stSidebar"] .stButton > button span {
+        color: #0d1b4b !important;
+        font-weight: 700 !important;
+    }
     /* ── SPLASH PAGE ── */
     .splash-bg {
         min-height: 100vh;
