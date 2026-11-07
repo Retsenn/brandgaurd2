@@ -46,21 +46,26 @@ import scoring                  # Hamari scoring.py (weighted scoring)
 import db                       # Hamari db.py (database)
 
 # ─── GEMINI API SETUP ───────────────────────────────────────────────────────
+import streamlit as st
 
-# .env file se API key load karo
-# .env file mein likha hai: GEMINI_API_KEY="AIza..."
-# dotenv library ye file padhti hai aur environment variables set karti hai
+# 1. Local development ke liye data/.env file load karo
 load_dotenv(os.path.join(os.path.dirname(__file__), "data", ".env"))
 
+# 2. Pehle local environment (.env) se key check karo
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-# os.getenv() → environment variable ka value lo
+
+# 3. Agar .env mein nahi mili (jaise Streamlit Cloud par), toh st.secrets se lo
+if not GEMINI_API_KEY:
+    try:
+        GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+    except Exception:
+        pass
 
 if not GEMINI_API_KEY:
-    print("❌ GEMINI_API_KEY not found! Check data/.env file.")
+    print("❌ GEMINI_API_KEY not found! Check data/.env or Streamlit Secrets.")
 
 # Gemini client initialize karo
 client = genai.Client(api_key=GEMINI_API_KEY)
-# Client = AI se baat karne ka "phone" — iske through hum requests bhejenge
 
 
 # ─── EVALUATION PROMPT ──────────────────────────────────────────────────────
